@@ -1,0 +1,38 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  margin: 10px;
+  display: grid;
+  justify-content: center;
+  text-align: justify;
+  text-justify: auto;
+}
+
+.slot-number {
+  font-size: 32px;
+  padding: 2em;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.lever {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
