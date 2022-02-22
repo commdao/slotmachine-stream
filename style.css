@@ -36,3 +36,12 @@ table.center {
   justify-content: center;
   align-items: center;
 }
+/* #game-series {
+  transition-timing-function: ease-in;
+  transition-duration: 300ms;
+}
+
+#rule-stipulation {
+  transition-timing-function: ease-in;
+  transition-duration: 300ms;
+} */

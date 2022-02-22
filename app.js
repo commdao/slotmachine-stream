@@ -1,7 +1,9 @@
 // areas to display selected game and selected rules
 let gameArea = document.getElementById('game-series');
-let rulesArea = document.getElementById('rule-stipulation');
 // area to display selected rules
+let rulesArea = document.getElementById('rule-stipulation');
+// button to spin
+let spinBtn = document.getElementById('spin-button');
 
 // array of game series
 const games = ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"];
@@ -24,12 +26,15 @@ const games = ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"];
 const rules = ["punish", "interrupt", "spacing", "anti-air", "5-hit combos", "lame"];
 
 // Randomizer to pick game and rules
-function spin() {
-    gameArea.innerHTML =
-        games[Math.floor(Math.random() * games.length)];
-    rulesArea.innerHTML =
-        rules[Math.floor(Math.random() * rules.length)];
-}
+spinBtn.addEventListener('click', () => {
+    setTimeout(function spin() {
+        document.querySelector('.slotmachine').style.backgroundColor = "green";
+        gameArea.innerHTML =
+            games[Math.floor(Math.random() * games.length)];
+        rulesArea.innerHTML =
+            rules[Math.floor(Math.random() * rules.length)];
+    }, 325);
+});
 // display explanation of rules
 let lame = "Playing overwhelmingly defensively, with as few offensive risks as possible. The goal is to win long, grueling rounds, often by time out, where the opponent feels like they have no way to get close."
 
