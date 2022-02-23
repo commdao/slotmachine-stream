@@ -7,6 +7,16 @@ let spinBtn = document.getElementById('spin-button');
 
 // array of game series
 const games = ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"];
+// what if I make nested arrays to store all games and rules
+const allGames = [
+    ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"],
+    ["UNICLR", "GGACPR", "DBFZ", "Nitroplus"],
+    ["Tekken", "GGST"],
+    ["PRBFTG", "MvCi"],
+    ["TMNT x JL", "Granblue", "Arcana Heart 3"],
+    ["SFV", "Killer Instinct"]
+];
+
 // array of aTier games
 // const aGames = ["UNICLR", "GGACPR", "DBFZ", "Nitroplus"];
 
