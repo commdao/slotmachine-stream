@@ -8,43 +8,45 @@ let spinBtn = document.getElementById('spin-button');
 // array of game series
 const games = ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"];
 // what if I make nested arrays to store all games and rules
-const allGames = [
-    ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"],
-    ["UNICLR", "GGACPR", "DBFZ", "Nitroplus"],
-    ["Tekken", "GGST"],
-    ["PRBFTG", "MvCi"],
-    ["TMNT x JL", "Granblue", "Arcana Heart 3"],
-    ["SFV", "Killer Instinct"]
-];
 
-// array of aTier games
-// const aGames = ["UNICLR", "GGACPR", "DBFZ", "Nitroplus"];
-
-// array of bTier games
-// const bGames = ["Tekken", "GGST"];
-
-// array of cTier games
-// const cGames = ["PRBFTG", "MvCi"];
-
-// array of dTier games
-// const dGames = ["TMNT x JL", "Granblue", "Arcana Heart 3"];
-
-// array of games only allowing rules anti-air and 5-hit combos
-// const eGames = ["SFV", "Killer Instinct"];
+const gameTiers = {
+    5: {
+        games: ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"]
+    },
+    4: {
+        games: ["UNICLR", "GGACPR", "DBFZ", "Nitroplus"]
+    },
+    3: {
+        games: ["Tekken", "GGST"]
+    },
+    2: {
+        games: ["PRBFTG", "MvCi"]
+    },
+    1: {
+        games: ["TMNT x JL", "Granblue", "Arcana Heart 3"]
+    },
+    0: {
+        games: ["SFV", "Killer Instinct"]
+    }
+}
 
 // array of rule stipulations
-const rules = ["punish", "interrupt", "spacing", "anti-air", "5-hit combos", "lame"];
+const rules = ["anti-air", "5-hit combos", "punish", "spacing", "lame", "interrupt"];
+
 
 // Randomizer to pick game and rules
 spinBtn.addEventListener('click', () => {
-    setTimeout(function spin() {
-        document.querySelector('.slotmachine').style.backgroundColor = "green";
-        gameArea.innerHTML =
-            games[Math.floor(Math.random() * games.length)];
-        rulesArea.innerHTML =
-            rules[Math.floor(Math.random() * rules.length)];
-    }, 325);
+        gameArea.innerHTML = games[Math.floor(Math.random() * games.length)];
+        rulesArea.innerHTML = rules[Math.floor(Math.random() * rules.length)];
 });
+
+// pick a certain tier of game
+// if tier 5, pick a random game from the array, using the full length of rules array
+// if tier 4, pick a random game from the array, limited to the first 5 rules of the array
+// if tier 3, pick a random game from the array, limited to the first 4 rules of the array
+// if tier 2, pick a random game from the array, limited to the first 3 rules of the array
+// if tier 1, pick a random game from the array, limited to the first 2 rule of the array
+
 // display explanation of rules
 let lame = "Playing overwhelmingly defensively, with as few offensive risks as possible. The goal is to win long, grueling rounds, often by time out, where the opponent feels like they have no way to get close."
 
