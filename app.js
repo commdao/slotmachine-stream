@@ -62,7 +62,8 @@ const games = [
 // }
 
 
-// Randomizer to pick game and rules
+// Randomizer to pick game and stipulations
+// THIS IS NOT WORKING CORRECTLY, not being collective, being separate randoms
 spinBtn.addEventListener('click', () => {
         gameArea.innerHTML = games[Math.floor(Math.random() * 5) + 1].logo;
         practiceArea.innerHTML = games[Math.floor(Math.random() * 5) +1].practice[Math.floor(Math.random() * 2)];
