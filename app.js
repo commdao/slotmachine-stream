@@ -1,51 +1,73 @@
-// areas to display selected game and selected rules
+// areas to display selected game info 
 let gameArea = document.getElementById('game-series');
-// area to display selected rules
-let rulesArea = document.getElementById('rule-stipulation');
+let practiceArea = document.getElementById('practice-point');
+let characterArea = document.getElementById('character-select');
+let logoArea = document.getElementById('game-logo');
 // button to spin
 let spinBtn = document.getElementById('spin-button');
 
-// array of game series
-const games = ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"];
-// what if I make nested arrays to store all games and rules
 
-const gameTiers = {
-    5: {
-        games: ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"]
+const games = [
+    {
+        name: "Soulcalibur VI",
+        logo: 'imgs/scvi.png',
+        characters: ["Cassandra", "Astaroth", "Seong-Mina", "Ivy"],
+        practice: ["spacing", "guard impact", "interrupt"]
     },
-    4: {
-        games: ["UNICLR", "GGACPR", "DBFZ", "Nitroplus"]
+    {
+        name: "King of Fighters 2002 Unlimited Match",
+        logo: 'imgs/kof02um.png',
+        characters: ["Team Ballbusters", "Team Millifam", "Team Bangs", "YurKiDern"],
+        practice: ["combos", "hops", "air throw"]
     },
-    3: {
-        games: ["Tekken", "GGST"]
+    {
+        name: "Dead or Alive 5: Last Round",
+        logo: 'imgs/doa5lr.png',
+        characters: ["Tina", "Rachel", "Nyotengu", "Sarah"],
+        practice: ["spacing", "holds", "combos"]
     },
-    2: {
-        games: ["PRBFTG", "MvCi"]
+    {
+        name: "Blazblue: Central Fiction",
+        logo: 'imgs/bbcf.png',
+        characters: ["Amane", "Platinum", "Litchi", "Nine"],
+        practice: ["combos", "interrupt"],
     },
-    1: {
-        games: ["TMNT x JL", "Granblue", "Arcana Heart 3"]
-    },
-    0: {
-        games: ["SFV", "Killer Instinct"]
+    {
+        name: "Million Arthur: Arcana Blood",
+        logo: 'imgs/maab.png',
+        characters: ["Eternal Flame", "Bisclavret"],
+        practice: ["combos", "anti-air"]
     }
-}
+]
 
-// array of rule stipulations
-const rules = ["anti-air", "5-hit combos", "punish", "spacing", "lame", "interrupt"];
+// const games = {
+//     5: {
+//         games: ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"]
+//     },
+//     4: {
+//         games: ["UNICLR", "GGACPR", "DBFZ", "Nitroplus"]
+//     },
+//     3: {
+//         games: ["Tekken", "GGST"]
+//     },
+//     2: {
+//         games: ["PRBFTG", "MvCi"]
+//     },
+//     1: {
+//         games: ["TMNT x JL", "Granblue", "Arcana Heart 3"]
+//     },
+//     0: {
+//         games: ["SFV", "Killer Instinct"]
+//     }
+// }
 
 
 // Randomizer to pick game and rules
 spinBtn.addEventListener('click', () => {
-        gameArea.innerHTML = games[Math.floor(Math.random() * games.length)];
-        rulesArea.innerHTML = rules[Math.floor(Math.random() * rules.length)];
+        gameArea.innerHTML = games[Math.floor(Math.random() * 5) + 1].logo;
+        practiceArea.innerHTML = games[Math.floor(Math.random() * 5) +1].practice[Math.floor(Math.random() * 2)];
 });
 
-// pick a certain tier of game
-// if tier 5, pick a random game from the array, using the full length of rules array
-// if tier 4, pick a random game from the array, limited to the first 5 rules of the array
-// if tier 3, pick a random game from the array, limited to the first 4 rules of the array
-// if tier 2, pick a random game from the array, limited to the first 3 rules of the array
-// if tier 1, pick a random game from the array, limited to the first 2 rule of the array
 
 // display explanation of rules
 let lame = "Playing overwhelmingly defensively, with as few offensive risks as possible. The goal is to win long, grueling rounds, often by time out, where the opponent feels like they have no way to get close."
