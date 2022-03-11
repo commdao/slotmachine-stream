@@ -17,7 +17,7 @@ const games = [
     {
         name: "King of Fighters 2002 Unlimited Match",
         logo: 'imgs/kof02um.png',
-        characters: ["Team Ballbusters", "Team Millifam", "Team Bangs", "YurKiDern"],
+        characters: ["Team Ballbusters", "Team Milifam", "Team Bangs", "Chopskick"],
         practice: ["combos", "hops", "air throw"]
     },
     {
