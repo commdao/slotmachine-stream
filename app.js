@@ -11,44 +11,78 @@ const games = [
     {
         name: "Soulcalibur VI",
         logo: 'imgs/scvi.png',
+        type: '3D',
         characters: ["Cassandra", "Astaroth", "Seong-Mina", "Ivy"],
-        practice: ["spacing", "guard impact", "interrupt"]
+        practice: ["spacing", "guard impact", "interrupt"],
+        status: "dead"
     },
     {
         name: "King of Fighters 2002 Unlimited Match",
         logo: 'imgs/kof02um.png',
+        type: '2D',
         characters: ["Team Ballbusters", "Team Milifam", "Team Bangs", "Chopskick"],
-        practice: ["combos", "hops", "air throw"]
+        practice: ["combos", "hops", "air throw"],
+        status: "rollback"
+    },
+    {
+        name: "Persona 4 Arena Ultimax",
+        logo: 'imgs/p4a.png',
+        type: '2D',
+        characters: ["Elizabeth", "Rise", "Yukari", "Mitsuru"],
+        practice: ["combos", "interrupt", "anti-air"],
+        status: "rollback"
     },
     {
         name: "Dead or Alive 5: Last Round",
         logo: 'imgs/doa5lr.png',
+        type: '3D',
         characters: ["Tina", "Rachel", "Nyotengu", "Sarah"],
-        practice: ["spacing", "holds", "combos"]
+        practice: ["spacing", "holds", "combos"],
+        status: "dead"
     },
     {
         name: "Blazblue: Central Fiction",
         logo: 'imgs/bbcf.png',
+        type: '2D',
         characters: ["Amane", "Platinum", "Litchi", "Nine"],
         practice: ["combos", "interrupt"],
+        status: "rollback"
     },
     {
         name: "Million Arthur: Arcana Blood",
         logo: 'imgs/maab.png',
+        type: '2D',
         characters: ["Eternal Flame", "Bisclavret"],
-        practice: ["combos", "anti-air"]
+        practice: ["combos", "anti-air"],
+        status: "poverty"
+    },
+    {
+        name: "Under Night In-Birth Exe Late[cl-r]",
+        logo: 'imgs/uniclr.png',
+        type: '2D',
+        characters: ["Phonon", "Mika", "Eltnum"],
+        practice: ["combos", "interrupt"],
+        status: "poverty"
+    },
+    {
+        name: "Guilty Gear XX Accent Core Plus R",
+        logo: 'imgs/ggacpr.png',
+        type: '2D',
+        characters: ["Jam"],
+        practice: ["combos", "interrupt"],
+        status: "rollback"
     }
 ]
 
 // const games = {
 //     5: {
-//         games: ["SCVI", "KOF02UM", "DOA5LR", "BBCF", "MAAB"]
+//         games: ["SCVI", "P4AU", "KOF02UM", "DOA5LR", "MAAB"]
 //     },
 //     4: {
-//         games: ["UNICLR", "GGACPR", "DBFZ", "Nitroplus"]
+//         games: ["UNICLR", "GGACPR", "BBCF"]
 //     },
 //     3: {
-//         games: ["Tekken", "GGST"]
+//         games: ["Tekken", "GGST", "Nitroplus"]
 //     },
 //     2: {
 //         games: ["PRBFTG", "MvCi"]
