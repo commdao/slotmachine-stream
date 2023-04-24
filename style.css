@@ -18,6 +18,8 @@ body {
   border: 1px solid black;
   display: grid;
   grid-template-columns: auto;
+  width: 80px;
+  height: 80px;
 }
 
 .center {
@@ -47,3 +49,8 @@ table.center {
   transition-timing-function: ease-in;
   transition-duration: 300ms;
 } */
+
+#game-logo.slot-number {
+  width: 80px;
+  height: 80px;
+}
