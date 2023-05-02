@@ -16,14 +16,17 @@ body {
   font-size: 32px;
   padding: 2em;
   border: 1px solid black;
-  display: grid;
-  grid-template-columns: auto;
-  width: 80px;
-  height: 80px;
+  display: flex;
+  flex-wrap: none;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
 }
 
 .center {
-  text-align: center;
+  display: flex;
+  flex-wrap: none;
 }
 
 .lever {
@@ -33,13 +36,6 @@ body {
   align-items: center;
 }
 
-table.center {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 /* #game-series {
   transition-timing-function: ease-in;
   transition-duration: 300ms;
@@ -50,7 +46,13 @@ table.center {
   transition-duration: 300ms;
 } */
 
-#game-logo.slot-number {
-  width: 80px;
-  height: 80px;
+#game-series {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+img {
+  width: 300px;
+  height: 200px;
 }

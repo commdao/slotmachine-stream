@@ -2,6 +2,7 @@ let gameArea = document.getElementById('game-series');
 let practiceArea = document.getElementById('practice-point');
 let characterArea = document.getElementById('character-select');
 let logoArea = document.getElementById('game-logo');
+let resultArea = document.getElementById('results');
 // button to spin
 let spinBtn = document.getElementById('spin-button'); 
 
@@ -69,21 +70,28 @@ spinBtn.addEventListener('click', () => {
     // Clear out previous results
     gameArea.innerHTML = '';
     practiceArea.innerHTML = '';
-    // Generate random game and practice point
+    characterArea.innerHTML = '';
+    resultArea.innerHTML = '';
+    // Generate random game and practice point and character
     let game = games[Math.floor(Math.random() * games.length)];
     let practicePoint = game.practice[Math.floor(Math.random() * game.practice.length)];
+    let characterChoice = game.characters[Math.floor(Math.random() * game.characters.length)];
     // Generate random animation durations for the spin
     let gameDuration = Math.floor(Math.random() * 0 + 1) * 1000; // Between 3 and 6 seconds
     let practiceDuration = Math.floor(Math.random() * 0 + 1) * 1000; // Between 3 and 6 seconds
+    let characterDuration = Math.floor(Math.random() * 0 + 1) * 1000; 
     // Set the HTML for the spinning animation
     gameArea.innerHTML = '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>';
     practiceArea.innerHTML = '<div class="spinner-border text-secondary" role="status"><span class="sr-only">Loading...</span></div>';
+    characterArea.innerHTML = '<div class="spinner-border text-secondary" role="status"><span class="sr-only">Loading...</span></div>';
     // Delay the reveal of the results to simulate spinning
     setTimeout(() => {
       // Set the HTML for the results
       gameArea.innerHTML = `<img src="${game.logo}" alt="${game.name}">`;
       practiceArea.innerHTML = `<h3>${practicePoint}</h3>`;
-    }, Math.max(gameDuration, practiceDuration));
+      characterArea.innerHTML = `<h3>${characterChoice}</h3>`;
+      resultArea.innerHTML = `<h3>Use ${characterChoice} in ${game.logo} to practice ${practicePoint}</h3>`
+    }, Math.max(gameDuration, practiceDuration, characterDuration));
   });
 
 
