@@ -90,7 +90,7 @@ spinBtn.addEventListener('click', () => {
       gameArea.innerHTML = `<img src="${game.logo}" alt="${game.name}">`;
       practiceArea.innerHTML = `<h3>${practicePoint}</h3>`;
       characterArea.innerHTML = `<h3>${characterChoice}</h3>`;
-      resultArea.innerHTML = `<h3>Use ${characterChoice} in ${game.logo} to practice ${practicePoint}</h3>`
+      resultArea.innerHTML = `<h3>Use ${characterChoice} to practice ${practicePoint}</h3>`
     }, Math.max(gameDuration, practiceDuration, characterDuration));
   });
 
