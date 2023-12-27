@@ -12,59 +12,61 @@ const games = [
         name: "Soulcalibur VI",
         logo: 'imgs/scvi.png',
         type: '3D',
-        characters: ["Cassandra", "Astaroth", "Seong-Mina", "Ivy"],
-        practice: ["spacing", "guard impact", "interrupt"],
+        characters: ["Cassandra", "Tira", "Taki", "Ivy"],
+        practice: ["spacing", "guard impact", "juggle combo"],
         status: "dead"
     },
     {
-        name: "King of Fighters 2002 Unlimited Match",
-        logo: 'imgs/kof02um.png',
+        name: "King of Fighters XV",
+        logo: '', // update
         type: '2D',
         characters: ["Team Ballbusters", "Team Milifam", "Team Bangs", "Chopskick"],
         practice: ["combos", "hops", "air throw"],
         status: "rollback"
     },
     {
-        name: "Dead or Alive 5: Last Round",
+        name: "Dead or Alive 5: Last Round", // Bonus split for DOA5LR or DOA6
         logo: 'imgs/doa5lr.png',
         type: '3D',
-        characters: ["Tina", "Rachel", "Nyotengu", "Sarah"],
-        practice: ["spacing", "holds", "combos"],
+        characters: ["Leifang", "Kokoro", "Helena", "Rachel"],
+        practice: ["spacing", "holds", "juggle combo"],
         status: "dead"
     },
     {
-        name: "Blazblue: Central Fiction",
-        logo: 'imgs/BlazBlue_Centralfiction_(Logo).png',
+        name: "Street Fighter 6",
+        logo: '', //update
         type: '2D',
-        characters: ["Amane", "Platinum", "Litchi", "Nine"],
+        characters: ["Chun Li", "Cammy", "A.K.I."],
         practice: ["combos", "interrupt"],
         status: "rollback"
     },
     {
-        name: "Million Arthur: Arcana Blood",
-        logo: 'imgs/MAAB.png',
-        type: '2D',
-        characters: ["Eternal Flame", "Bisclavret"],
-        practice: ["combos", "anti-air"],
-        status: "poverty"
+        name: "Tekken 7",
+        logo: '', //update
+        type: '3D',
+        characters: ["Heihachi", "Nina", "Anna", "Eliza", "Xiaoyu", "Julia", "Katarina", "Zafina", "Lili"], // divide between T8 confirmed
+        practice: ["shimmy", "backdash", "interrupt"],
+        status: ""
     },
     {
-        name: "Under Night In-Birth Exe Late[cl-r]",
-        logo: 'imgs/Uniclr-logo.png',
+        name: "Granblue Fantasy Versus: Rising",
+        logo: '', //update
         type: '2D',
-        characters: ["Phonon", "Mika", "Eltnum"],
-        practice: ["combos", "interrupt"],
-        status: "poverty"
+        characters: ["Zeta", "Anila", "Vira", "Narmaya"],
+        practice: ["spot dodge", "roll", "anti-air", "combo extended from ex"],
+        status: "rollback"
     },
     {
-        name: "Guilty Gear XX Accent Core Plus R",
-        logo: 'imgs/Guilty_Gear_XX_Accent_Core_Plus_R_Logo.png',
+        name: "Mortal Kombat 1",
+        logo: '', // update
         type: '2D',
-        characters: ["Jam"],
-        practice: ["combos", "interrupt"],
+        characters: ["Sindel", "Mileena", "Nitara", "Kitana", "Ashrah", "Li Mei"],
+        practice: ["double kameo call combo", "turn retake"],
         status: "rollback"
     }
 ]
+
+let carousel = document.querySelector('.carousel');
 
 spinBtn.addEventListener('click', () => {
     // Clear out previous results
@@ -90,7 +92,9 @@ spinBtn.addEventListener('click', () => {
       gameArea.innerHTML = `<img src="${game.logo}" alt="${game.name}">`;
       practiceArea.innerHTML = `<h3>${practicePoint}</h3>`;
       characterArea.innerHTML = `<h3>${characterChoice}</h3>`;
-      resultArea.innerHTML = `<h3>Use ${characterChoice} in ${game.logo} to practice ${practicePoint}</h3>`
+      resultArea.innerHTML = `<h3>Use ${characterChoice} in ${game.logo} to practice ${practicePoint}</h3>`;
+
+      carousel.querySelector('img').src = game.logo;
     }, Math.max(gameDuration, practiceDuration, characterDuration));
   });
 
