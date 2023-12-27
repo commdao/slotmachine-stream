@@ -95,6 +95,7 @@ spinBtn.addEventListener('click', () => {
       resultArea.innerHTML = `<h3>Use ${characterChoice} in ${game.logo} to practice ${practicePoint}</h3>`;
 
       carousel.querySelector('img').src = game.logo;
+      resultArea.innerHTML = `<h3>Use ${characterChoice} to practice ${practicePoint}</h3>`
     }, Math.max(gameDuration, practiceDuration, characterDuration));
   });
 
